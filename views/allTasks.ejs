@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Add Task</h1>
+    <form method="POST" action="./add-task">
+        <div>
+            <label  for="empId">empId</label>
+            <input type="number" name="empId">
+        </div>
+        <div>
+            <label  for="taskId">Id</label>
+            <input type="number" name="taskId">
+        </div>
+        <div>
+            <label  for="task">Task</label>
+            <input type="text" name="task">
+        </div>
+        <div>
+            <label  for="deadline">Deadline</label>
+            <input type="date" name="deadline">
+        </div>
+        <div>
+            <button type="submit">Add Task</button>
+        </div>
+
+    </form> 
+   
+    <h1>Delete TASK</h1>
+    <form method="POST" action="./delete-task">
+        <div class="">
+                <label for="del">Enter taskId to be deletd</label>
+                <input for="del" name="delId">
+        </div>
+        <div>
+            <button type="submit">Delete Task</button>
+        </div>
+    </form>
+
+    <h1>ALL Tasks</h1>
+    <table style="width:100%">
+        <tr>
+          <th>Empid</th>
+          <th>TaskId</th>
+          <th>Task</th>
+          <th>Deadline</th>
+        </tr>
+
+        <% data.forEach(ele => { %>
+            <tr>
+                <td><%= ele.empId %></td>
+                <td><%= ele.taskId %></td>
+                <td><%= ele.task %></td>
+                <td><%= ele.deadline %></td>
+            </tr>
+        <% }) %>
+
+        
+        </table>
+        
+    
+    
+</body>
+</html>
